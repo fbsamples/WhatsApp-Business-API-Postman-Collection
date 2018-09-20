@@ -1,6 +1,6 @@
 # WhatsApp Business API - Postman Collection
 
-This is a collection of all the WhatsApp Business APIs that can be imported into Postman.  The APIs make use of variables that are defined in an environment, which is also provided for import into Postman.
+This is a Postman collection of [WhatsApp Business API](https://developers.facebook.com/docs/whatsapp).  The provided environment contains the list of variables referenced by the API collection.
 
 See docs for usage.
 https://developers.facebook.com/docs/whatsapp/guides/postman
