@@ -69,6 +69,12 @@
       "enabled": true
     },
     {
+      "key": "Message-Id",
+      "value": "<valid message id from incoming/outgoing>",
+      "type": "text",
+      "enabled": true
+    },
+    {
       "key": "Media-Id",
       "value": "<valid media id from media upload api>",
       "type": "text",
@@ -273,8 +279,110 @@
       "enabled": true
     },
     {
+      "key": "MessageContactAddressCity",
+      "value": "<Contact's city>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressCountry",
+      "value": "<Contact's country>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressCountryCode",
+      "value": "<Contact's country code>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressState",
+      "value": "<Contact's state>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressStreet",
+      "value": "<Contact's street>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressType",
+      "value": "<Contact's address type>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactAddressZip",
+      "value": "<Contact's zip code>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactBirthday",
+      "value": "<Contact's birthday>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactEmail",
+      "value": "<Contact's email address>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactEmailType",
+      "value": "<Contact's email type>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactFirstName",
+      "value": "<Contact's first name>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactFormattedName",
+      "value": "<Contact's formatted name>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactLastName",
+      "value": "<Contact's last name>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactCompany",
+      "value": "<Contact's company>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactPhone",
+      "value": "<Contact's phone>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageContactPhoneType",
+      "value": "<Contact's phone type>",
+      "type": "text",
+      "enabled": true
+    },
+    {
       "key": "MessageDocId",
       "value": "<valid media id for doc>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageHSMTTL",
+      "value": "<ttl of message in ISO8601 Duration, or seconds (ex. P1D, 86400)>",
       "type": "text",
       "enabled": true
     },
@@ -305,6 +413,30 @@
     {
       "key": "MessageHSMParams",
       "value": "[{\"default\":\"10\"},{\"default\":\"1234\"}]",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageLocationLongitude",
+      "value": "<Longitude of location>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageLocationLatitude",
+      "value": "<Latitude of location>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageLocationName",
+      "value": "<Name of location>",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "MessageLocationAddress",
+      "value": "<Address of location>",
       "type": "text",
       "enabled": true
     },

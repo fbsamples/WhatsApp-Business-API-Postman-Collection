@@ -1,13 +1,12 @@
 {
 	"info": {
-		"_postman_id": "08e875e4-64e6-4e1c-b356-c7271e516e10",
+		"_postman_id": "c9993817-6ec9-4ff8-86c2-870be24f0f7a",
 		"name": "WhatsApp Business API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "00-Users",
-			"description": null,
 			"item": [
 				{
 					"name": "Login-User",
@@ -120,7 +119,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"admin123\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/users/{{AdminUsername}}",
@@ -152,7 +151,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"admin123\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/users/{{UserUsername}}",
@@ -268,11 +267,9 @@
 		},
 		{
 			"name": "01-Settings",
-			"description": null,
 			"item": [
 				{
 					"name": "Application",
-					"description": null,
 					"item": [
 						{
 							"name": "Get-Settings",
@@ -290,7 +287,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"payload\": {\n\t\t\"get_settings\": {\n\t\t}\n    }\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{URL}}/v1/settings/application",
@@ -471,7 +468,6 @@
 				},
 				{
 					"name": "Profile",
-					"description": null,
 					"item": [
 						{
 							"name": "Get-Profile-About",
@@ -489,7 +485,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"allow_unsolicited_add\": false\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{URL}}/v1/settings/profile/about",
@@ -522,7 +518,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"allow_unsolicited_add\": false\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{URL}}/v1/settings/profile/photo",
@@ -579,7 +575,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "image/jpg"
+										"value": "image/jpeg"
 									},
 									{
 										"key": "Authorization",
@@ -610,7 +606,6 @@
 				},
 				{
 					"name": "Business Profile",
-					"description": null,
 					"item": [
 						{
 							"name": "Get-Business-Profile",
@@ -628,7 +623,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"text\": \"You've just got punked\"\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{URL}}/v1/settings/business/profile",
@@ -683,7 +678,6 @@
 				},
 				{
 					"name": "Backup/Restore",
-					"description": null,
 					"item": [
 						{
 							"name": "Backup-Settings",
@@ -754,7 +748,6 @@
 				},
 				{
 					"name": "Two-Step Verification",
-					"description": null,
 					"item": [
 						{
 							"name": "Enable-Two-Step",
@@ -829,7 +822,6 @@
 		},
 		{
 			"name": "02-Registration",
-			"description": null,
 			"item": [
 				{
 					"name": "Request-Code",
@@ -898,7 +890,6 @@
 		},
 		{
 			"name": "03-Contacts",
-			"description": null,
 			"item": [
 				{
 					"name": "Check-Contact",
@@ -967,7 +958,6 @@
 		},
 		{
 			"name": "04-Messages",
-			"description": null,
 			"item": [
 				{
 					"name": "Send-Text-Message",
@@ -1190,12 +1180,137 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Send-HSM-TTL-Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"ttl\": \"{{MessageHSMTTL}}\",\n\t\"type\": \"hsm\",\n\t\"hsm\": {\n\t\t\"namespace\": \"{{MessageHSMNamespace}}\",\n    \t\"element_name\": \"{{MessageHSMElement}}\",\n    \t\"language\": {\n    \t\t\"policy\": \"{{MessageHSMLanguagePolicy}}\",\n    \t\t\"code\": \"{{MessageHSMLanguageCode}}\"\n    \t},\n\t    \"localizable_params\": {{MessageHSMParams}}\n\t}\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send-Contact-Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"{{Recipient-WA-ID}}\",\n  \"type\": \"contacts\",\n  \"recipient_type\": \"individual\",\n  \"contacts\": [\n  \t{\n  \t\t\"addresses\": [\n  \t\t\t{\n  \t\t\t\t\"city\": \"{{MessageContactAddressCity}}\",\n  \t\t\t\t\"country\": \"{{MessageContactAddressCountry}}\",\n  \t\t\t\t\"country_code\": \"{{MessageContactAddressCountryCode}}\",\n  \t\t\t\t\"state\": \"{{MessageContactAddressState}}\",\n  \t\t\t\t\"street\": \"{{MessageContactAddressStreet}}\",\n  \t\t\t\t\"type\": \"{{MessageContactAddressType}}\",\n  \t\t\t\t\"zip\": \"{{MessageContactAddressZip}}\"\n  \t\t\t}\n  \t\t],\n  \t\t\"birthday\": \"{{MessageContactBirthday}}\",\n  \t\t\"emails\": [\n  \t\t\t{\n  \t\t\t\t\"email\": \"{{MessageContactEmail}}\",\n  \t\t\t\t\"type\": \"{{MessageContactEmailType}}\"\n  \t\t\t}\n  \t\t],\n  \t\t\"ims\": [],\n  \t\t\"name\": {\n  \t\t\t\"first_name\": \"{{MessageContactFirstName}}\",\n  \t\t\t\"formatted_name\": \"{{MessageContactFormattedName}}\",\n  \t\t\t\"last_name\": \"{{MessageContactLastName}}\"\n  \t\t},\n  \t\t\"org\": {\n  \t\t\t\"company\": \"{{MessageContactCompany}}\"\n  \t\t},\n  \t\t\"phones\": [\n  \t\t\t{\n  \t\t\t\t\"phone\": \"{{MessageContactPhone}}\",\n  \t\t\t\t\"type\": \"{{MessageContactPhoneType}}\"\n  \t\t\t}\n  \t\t],\n  \t\t\"urls\": []\n  \t}\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send-Location-Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"{{Recipient-WA-ID}}\",\n  \"type\": \"location\",\n  \"recipient_type\": \"individual\",\n  \"location\": {\n    \"longitude\": \"{{MessageLocationLongitude}}\",\n    \"latitude\": \"{{MessageLocationLatitude}}\",\n    \"name\": \"{{MessageLocationName}}\",\n    \"address\": \"{{MessageLocationAddress}}\"\n  }\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark-Message-As-Read",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"read\"\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages/{{Message-Id}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages",
+								"{{Message-Id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "05-Groups",
-			"description": null,
 			"item": [
 				{
 					"name": "Create-Group",
@@ -1244,7 +1359,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"Test Group\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/groups/",
@@ -1276,7 +1391,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"Test Group\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}",
@@ -1340,7 +1455,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"Test Group\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/invite",
@@ -1505,7 +1620,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"New Subject\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/icon",
@@ -1625,7 +1740,6 @@
 		},
 		{
 			"name": "06-Media",
-			"description": null,
 			"item": [
 				{
 					"name": "Upload-Media",
@@ -1634,7 +1748,7 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "image/jpg"
+								"value": "image/jpeg"
 							},
 							{
 								"key": "Authorization",
@@ -1678,8 +1792,8 @@
 							}
 						],
 						"body": {
-							"mode": "file",
-							"file": {}
+							"mode": "raw",
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/media/{{Media-Id}}",
@@ -1731,7 +1845,6 @@
 		},
 		{
 			"name": "07-Health",
-			"description": null,
 			"item": [
 				{
 					"name": "Check-Health",
@@ -1780,7 +1893,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"payload\": [\"app_stats\"]\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/stats/app",
@@ -1812,7 +1925,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"payload\": [\"app_stats\"]\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/stats/app/internal",
@@ -1845,7 +1958,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"payload\": [\"app_stats\"]\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/stats/db",
@@ -1877,7 +1990,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"payload\": [\"app_stats\"]\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/stats/db/internal",
@@ -1929,7 +2042,6 @@
 		},
 		{
 			"name": "08-Certificates",
-			"description": null,
 			"item": [
 				{
 					"name": "Upload-Certificate",
@@ -1978,8 +2090,8 @@
 							}
 						],
 						"body": {
-							"mode": "file",
-							"file": {}
+							"mode": "raw",
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/certificates/external/ca",
@@ -2040,8 +2152,8 @@
 							}
 						],
 						"body": {
-							"mode": "file",
-							"file": {}
+							"mode": "raw",
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{URL}}/v1/certificates/webhooks/ca",
