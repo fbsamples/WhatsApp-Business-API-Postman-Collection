@@ -1,459 +1,72 @@
 {
-  "id": "569bd359-6905-49ad-95eb-e8d7165f1cef",
   "name": "WABiz Developer",
   "values": [
     {
-      "key": "URL",
-      "value": "<valid webapp url, i.e 'https://localhost:9090'>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AdminUsername",
-      "value": "<username of whatsapp business client admin>",
-      "type": "text",
+      "key": "AdminAuthToken",
+      "value": "<valid token from login api as admin>",
       "enabled": true
     },
     {
       "key": "AdminPassword",
       "value": "<password of whatsapp business client admin>",
-      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "AdminUsername",
+      "value": "<username of whatsapp business client admin>",
       "enabled": true
     },
     {
       "key": "Base64AdminCredentials",
       "value": "<base64(username:password)>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AdminAuthToken",
-      "value": "<valid token from login api as admin>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "NewAdminPassword",
-      "value": "<new password at first login>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "UserUsername",
-      "value": "<username>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "UserPassword",
-      "value": "<password>",
-      "type": "text",
       "enabled": true
     },
     {
       "key": "Base64UserCredentials",
       "value": "<base64(username:password)>",
+      "enabled": true
+    },
+    {
+      "key": "Recipient-WA-ID",
+      "value": "<valid wa id of recipient>",
       "type": "text",
+      "description": "",
+      "enabled": true
+    },
+    {
+      "key": "Test-Group-Id",
+      "value": "Test Group Id",
+      "description": "",
+      "enabled": true
+    },
+    {
+      "key": "Test-Media-Id",
+      "value": "Test Media Id",
+      "description": "",
+      "enabled": true
+    },
+    {
+      "key": "URL",
+      "value": "<valid webapp url, i.e 'https://localhost:9090'>",
+      "enabled": true
+    },
+    {
+      "key": "UserUsername",
+      "value": "<username of whatsapp business client user>",
+      "description": "",
+      "enabled": true
+    },
+    {
+      "key": "UserPassword",
+      "value": "<password of whatsapp business client user>",
+      "description": "",
       "enabled": true
     },
     {
       "key": "UserAuthToken",
       "value": "<valid token from login api as user>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "NewUserPassword",
-      "value": "<new password>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "Message-Id",
-      "value": "<valid message id from incoming/outgoing>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "Media-Id",
-      "value": "<valid media id from media upload api>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "Recipient-PhoneNumber",
-      "value": "<valid test number with country code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "Recipient-WA-ID",
-      "value": "<valid wa_id from check contacts api>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "Test-Group-Id",
-      "value": "<valid group id from group create api>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "ProfileAbout",
-      "value": "<profile-about text>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BusinessProfileAddress",
-      "value": "<business-profile-address text>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BusinessProfileDescription",
-      "value": "<business-profile-description text>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BusinessProfileEmail",
-      "value": "<business-profile-email text>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BusinessProfileVertical",
-      "value": "<business-profile-vertical text>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BusinessProfileWebsites",
-      "value": "<array of web string strings>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "BackupPassword",
-      "value": "<password>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RestoreData",
-      "value": "<data from backup response>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "TwoStepPIN",
-      "value": "<two-step verification pin, leave blank if not using two-step verification>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsCallbackBackoff",
-      "value": "3000",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsCallbackPersist",
-      "value": "true",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsHeartbeatInterval",
-      "value": "5",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsMaxCallbackBackoff",
-      "value": "900000",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsMediaAutoDownload",
-      "value": "[\"audio\", \"document\", \"voice\", \"video\", \"image\"]",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsOnCallPager",
-      "value": "",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsPassThrough",
-      "value": "false",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsSentStatus",
-      "value": "false",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsUnhealthyInterval",
-      "value": "30",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsWebhookURL",
-      "value": "<valid webhook url>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "AppSettingsWebhookMaxConcurrentReq",
-      "value": "12",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RegistrationRequestCountryCode",
-      "value": "<country code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RegistrationRequestPhoneNumber",
-      "value": "<phone number without country code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RegistrationRequestMethod",
-      "value": "<sms | voice>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RegistrationRequestVNameCert",
-      "value": "<vname cert in base64>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "RegistrationRegisterCode",
-      "value": "<code from sms/voice>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageTextBody",
-      "value": "Test message!",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageTextURLBody",
-      "value": "Test message with url: https://www.google.com",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageURLPreview",
-      "value": "true",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageMediaCaption",
-      "value": "Caption goes here",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageAudioId",
-      "value": "<valid media id for audio>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressCity",
-      "value": "<Contact's city>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressCountry",
-      "value": "<Contact's country>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressCountryCode",
-      "value": "<Contact's country code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressState",
-      "value": "<Contact's state>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressStreet",
-      "value": "<Contact's street>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressType",
-      "value": "<Contact's address type>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactAddressZip",
-      "value": "<Contact's zip code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactBirthday",
-      "value": "<Contact's birthday>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactEmail",
-      "value": "<Contact's email address>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactEmailType",
-      "value": "<Contact's email type>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactFirstName",
-      "value": "<Contact's first name>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactFormattedName",
-      "value": "<Contact's formatted name>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactLastName",
-      "value": "<Contact's last name>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactCompany",
-      "value": "<Contact's company>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactPhone",
-      "value": "<Contact's phone>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageContactPhoneType",
-      "value": "<Contact's phone type>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageDocId",
-      "value": "<valid media id for doc>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMTTL",
-      "value": "<ttl of message in ISO8601 Duration, or seconds (ex. P1D, 86400)>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMNamespace",
-      "value": "<HSM mamespace>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMElement",
-      "value": "<HSM element>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMLanguagePolicy",
-      "value": "<HSM language policy>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMLanguageCode",
-      "value": "<HSM language code>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageHSMParams",
-      "value": "[{\"default\":\"10\"},{\"default\":\"1234\"}]",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageLocationLongitude",
-      "value": "<Longitude of location>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageLocationLatitude",
-      "value": "<Latitude of location>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageLocationName",
-      "value": "<Name of location>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "MessageLocationAddress",
-      "value": "<Address of location>",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "GroupsSubject",
-      "value": "Test Group",
-      "type": "text",
-      "enabled": true
-    },
-    {
-      "key": "GroupsNewSubject",
-      "value": "Test Group - New Subject",
-      "type": "text",
       "enabled": true
     }
   ],
-  "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-06-21T08:42:22.266Z",
-  "_postman_exported_using": "Postman/6.1.3"
+  "_postman_variable_scope": "environment"
 }
