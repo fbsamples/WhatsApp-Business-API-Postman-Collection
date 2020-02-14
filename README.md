@@ -11,7 +11,7 @@ The WhatsApp Business API Postman Collection and Environment requires the instal
 
 ## Installing
 
-1) Download `collection.json` and `environment.json` onto your local machine
+1) Download `collection.json` and `environment.json` onto your local machine.  If you are working with the Business Management API, you will need to download the separate set of config files inside `business_management_api` folder.
 2) Open Postman, click on Import and select the two json files.
 3) Once imported, a new API collection will be created, along with the environment.
 
