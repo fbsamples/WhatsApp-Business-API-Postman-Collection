@@ -1,0 +1,29 @@
+{
+	"id": "e8629cfd-47bf-4347-bc77-024d89fa6305",
+	"name": "WhatsApp Business Management API",
+	"values": [
+		{
+			"key": "SystemUserToken",
+			"value": "<system user token from Business Manager>",
+			"enabled": true
+		},
+		{
+			"key": "Graph-URL",
+			"value": "https://graph.facebook.com",
+			"enabled": true
+		},
+		{
+			"key": "Version",
+			"value": "v6.0",
+			"enabled": true
+		},
+		{
+			"key": "WABA-ID",
+			"value": "<whatsapp-business-account-id>",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-02-13T19:45:42.542Z",
+	"_postman_exported_using": "Postman/7.18.0"
+}
