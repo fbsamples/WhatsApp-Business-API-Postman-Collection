@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "486a8740-0c18-4854-9bf3-e346a78161d3",
+		"_postman_id": "614eda47-07c9-4d72-ad92-d7025113ec47",
 		"name": "WhatsApp Business Management API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -99,7 +99,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"category\": \"<Message Template Category>\",\n    \"components\": [\n        {\n            \"type\": \"<BODY | HEADER | FOOTER>\",\n            \"text\": \"<Template Text>\"\n        }\n    ],\n    \"name\": \"<Template Name>\",\n    \"language\": \"<Language and Locale>\t\"\n}",
+					"raw": "{\n    \"category\": \"<Message Template Category>\",\n    \"components\": [\n        {\n            \"type\": \"<BODY | HEADER | FOOTER | BUTTONS>\",\n            \"text\": \"<Template Text>\"\n        }\n    ],\n    \"name\": \"<Template Name>\",\n    \"language\": \"<Language and Locale>\t\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

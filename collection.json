@@ -1523,6 +1523,70 @@
 					"response": []
 				},
 				{
+					"name": "Send-Message-Template-Call-To-Action",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"template\",\n\t\"template\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"name\": \"<Message Template Element Name>\",\n    \t\"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n    \t},\n    \t\"components\": [\n    \t\t{\n    \t\t\t\"type\": \"header\",\n    \t\t\t\"parameters\": {\n    \t\t\t\t\"type\": \"text\",\n    \t\t\t\t\"text\": \"<Param Text>\"\n    \t\t\t}\n    \t\t},\n    \t\t{\n    \t\t\t\"type\": \"body\",\n    \t\t\t\"parameters\": {\n    \t\t\t\t\"type\": \"text\",\n    \t\t\t\t\"text\": \"<Param Text>\"\n    \t\t\t}\n    \t\t},\n    \t\t{\n    \t\t\t\"type\": \"button\",\n    \t\t\t\"sub_type\": \"url\",\n    \t\t\t\"index\": \"1\",\n    \t\t\t\"parameters\": [\n    \t\t\t\t{\n    \t\t\t\t\t\"type\": \"text\",\n    \t\t\t\t\t\"text\": \"<Developer Defined Dynamic URL suffix>\"\n    \t\t\t\t}\n    \t\t\t]\n    \t\t}\n    \t]\n\t}\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send-Message-Template-Quick-Reply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"template\",\n\t\"template\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"name\": \"<Message Template Element Name>\",\n    \t\"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n    \t},\n    \t\"components\": [\n    \t\t{\n    \t\t\t\"type\": \"header\",\n    \t\t\t\"parameters\": {\n    \t\t\t\t\"type\": \"text\",\n    \t\t\t\t\"text\": \"<Param Text>\"\n    \t\t\t}\n    \t\t},\n    \t\t{\n    \t\t\t\"type\": \"body\",\n    \t\t\t\"parameters\": {\n    \t\t\t\t\"type\": \"text\",\n    \t\t\t\t\"text\": \"<Param Text>\"\n    \t\t\t}\n    \t\t},\n    \t\t{\n    \t\t\t\"type\": \"button\",\n    \t\t\t\"sub_type\": \"quick_reply\",\n    \t\t\t\"index\": \"1\",\n    \t\t\t\"parameters\": [\n    \t\t\t\t{\n    \t\t\t\t\t\"type\": \"payload\",\n    \t\t\t\t\t\"payload\": \"<Developer Defined payload for quick reply>\"\n    \t\t\t\t}\n    \t\t\t]\n    \t\t}\n    \t]\n\t}\n}\n"
+						},
+						"url": {
+							"raw": "{{URL}}/v1/messages/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Send-Contact-Message",
 					"request": {
 						"method": "POST",
@@ -1632,7 +1696,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"sticker\",\n\t\"recipient_type\": \"individual\",\n\t\"sticker\": {\n\t\t\"provider\": {\n\t\t\t\"name\": \"<Provider Name from Media Provider API, optional\"\n\t\t},\n\t\t\"link\": \"<Sticker Image Link>\"\n\t}\n}\n"
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"sticker\",\n\t\"recipient_type\": \"individual\",\n\t\"sticker\": {\n\t\t\"provider\": {\n\t\t\t\"name\": \"<Provider Name from Media Provider API, optional\"\n\t\t},\n\t\t\"link\": \"<Image Link>\"\n\t}\n}\n"
 						},
 						"url": {
 							"raw": "{{URL}}/v1/messages/",
