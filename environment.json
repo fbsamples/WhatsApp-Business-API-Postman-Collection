@@ -1,5 +1,5 @@
 {
-	"id": "20f576e8-34b8-4c52-bbcd-2009219fd1cf",
+	"id": "8b56924d-315a-40dd-b927-25dfd6f5c142",
 	"name": "WABiz Developer",
 	"values": [
 		{
@@ -15,16 +15,6 @@
 		{
 			"key": "AdminUsername",
 			"value": "<username of whatsapp business client admin>",
-			"enabled": true
-		},
-		{
-			"key": "Base64AdminCredentials",
-			"value": "<base64(username:password)>",
-			"enabled": true
-		},
-		{
-			"key": "Base64UserCredentials",
-			"value": "<base64(username:password)>",
 			"enabled": true
 		},
 		{
@@ -84,6 +74,6 @@
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2020-02-07T03:07:59.415Z",
-	"_postman_exported_using": "Postman/7.17.0"
+	"_postman_exported_at": "2020-05-27T14:47:41.093Z",
+	"_postman_exported_using": "Postman/7.24.0"
 }

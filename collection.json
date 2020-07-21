@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bcb6d07f-8998-4107-8803-7cd81061085f",
+		"_postman_id": "04440565-1a71-4762-ba41-35cf818cdac4",
 		"name": "WhatsApp Business API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,15 +11,26 @@
 				{
 					"name": "Login-User",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{UserPassword}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{UserUsername}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic {{Base64UserCredentials}}"
 							}
 						],
 						"body": {
@@ -43,15 +54,26 @@
 				{
 					"name": "Login-Admin",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{AdminPassword}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AdminUsername}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic {{Base64AdminCredentials}}"
 							}
 						],
 						"body": {
@@ -255,7 +277,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "01-Settings",
@@ -403,7 +426,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"callback_backoff_delay_ms\": 3000,\n  \t\"max_callback_backoff_delay_ms\": 900000,\n  \t\"callback_persist\": true,\n  \t\"media\": {\n  \t\t\"auto_download\": [\"image\", \"document\", \"audio\"]\n  \t},\n  \t\"webhooks\": {\n  \t\t\"url\": \"<Webhook URL, https>\",\n  \t\t\"max_concurrent_requests\": 12\n  \t},\n  \t\"on_call_pager\": \"<WA_ID of valid WhatsApp contact>\",\n  \t\"pass_through\": false,\n  \t\"sent_status\": false\n}"
+									"raw": "{\n\t\"callback_backoff_delay_ms\": 3000,\n  \t\"max_callback_backoff_delay_ms\": 900000,\n  \t\"callback_persist\": true,\n  \t\"media\": {\n  \t\t\"auto_download\": [\"image\", \"document\", \"audio\"]\n  \t},\n  \t\"webhooks\": {\n  \t\t\"url\": \"<Webhook URL, https>\",\n  \t\t\"max_concurrent_requests\": 12\n  \t},\n  \t\"pass_through\": false,\n  \t\"sent_status\": false,\n\t\"db_garbagecollector_enable\": true\n}"
 								},
 								"url": {
 									"raw": "{{URL}}/v1/settings/application",
@@ -558,6 +581,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -628,6 +652,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -696,6 +721,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -861,6 +887,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -933,9 +960,11 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "02-Registration",
@@ -1003,7 +1032,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "03-Contacts",
@@ -1071,7 +1101,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "04-Messages",
@@ -1154,7 +1185,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"to\": \"<WA Group ID>\",\n  \"type\": \"text\",\n  \"recipient_type\": \"group\",\n  \"text\": {\n    \"body\": \"<Message Text>\"\n  }\n}\n"
+							"raw": "{\n  \"to\": \"{{Test-Group-Id}}\",\n  \"type\": \"text\",\n  \"recipient_type\": \"group\",\n  \"text\": {\n    \"body\": \"<Message Text>\"\n  }\n}\n"
 						},
 						"url": {
 							"raw": "{{URL}}/v1/messages/",
@@ -1744,7 +1775,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "05-Groups",
@@ -2192,7 +2224,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "06-Media",
@@ -2293,7 +2326,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "07-Stickers",
@@ -2742,7 +2776,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "08-Health",
@@ -2915,7 +2950,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "09-Certificates",
@@ -3068,7 +3104,48 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "10-Services",
+			"item": [
+				{
+					"name": "Delete-Messages-From-DB",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/v1/services/message/gc",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"services",
+								"message",
+								"gc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
