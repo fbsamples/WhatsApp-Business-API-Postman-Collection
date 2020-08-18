@@ -579,6 +579,32 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get-Shards",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AdminAuthToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/v1/account/shards",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"v1",
+										"account",
+										"shards"
+									]
+								},
+								"description": "Get shards"
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -3140,6 +3166,88 @@
 								"gc"
 							]
 						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "11-Metrics-And-Stats",
+			"item": [
+				{
+					"name": "Metrics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/metrics",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"metrics"
+							]
+						},
+						"description": "Returns metrics for the Webapp"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-App-Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/v1/stats/app",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"stats",
+								"app"
+							]
+						},
+						"description": "Returns stats for the Coreapp"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-DB-Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AdminAuthToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/v1/stats/db",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"stats",
+								"db"
+							]
+						},
+						"description": "Returns stats for the database"
 					},
 					"response": []
 				}
