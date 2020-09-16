@@ -315,6 +315,34 @@
 							"response": []
 						},
 						{
+							"name": "Get-Shards",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AdminAuthToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/v1/account/shards",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"v1",
+										"account",
+										"shards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Set-Shards",
 							"request": {
 								"method": "POST",
