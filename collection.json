@@ -1499,7 +1499,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"hsm\",\n\t\"hsm\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"element_name\": \"<Message Template Element Name>\",\n    \t\"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n    \t},\n\t    \"localizable_params\": [{\"default\":\"<param value>\"}]\n\t}\n}\n"
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"type\": \"template\",\n\t\"template\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"name\": \"<Message Template Element Name>\",\n        \"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n        },\n        \"components\": [{\n            \"type\": \"body\",\n            \"parameters\": [\n                {\n                    \"type\": \"<param type>\",\n                    \"text\": \"<param value>\"\n                }\n            ]\n        }]\n\t}\n}\n"
 						},
 						"url": {
 							"raw": "{{URL}}/v1/messages/",
@@ -1531,7 +1531,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"ttl\": \"<Message Template TTL>\",\n\t\"type\": \"hsm\",\n\t\"hsm\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"element_name\": \"<Message Template Element Name>\",\n    \t\"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n    \t},\n\t    \"localizable_params\": [{\"default\":\"<param value>\"}]\n\t}\n}\n"
+							"raw": "{\n\t\"to\": \"{{Recipient-WA-ID}}\",\n\t\"ttl\": \"<Message Template TTL>\",\n\t\"type\": \"template\",\n\t\"template\": {\n\t\t\"namespace\": \"<Message Template Namespace>\",\n    \t\"name\": \"<Message Template Element Name>\",\n        \"language\": {\n    \t\t\"policy\": \"<Message Template Language Policy>\",\n    \t\t\"code\": \"<Message Template Language Code>\"\n        },\n        \"components\": [{\n            \"type\": \"body\",\n            \"parameters\": [\n                {\n                    \"type\": \"<param type>\",\n                    \"text\": \"<param value>\"\n                }\n            ]\n        }]\n\t}\n}\n"
 						},
 						"url": {
 							"raw": "{{URL}}/v1/messages/",
