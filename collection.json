@@ -1286,38 +1286,6 @@
 					"response": []
 				},
 				{
-					"name": "Send-Text-Group-Message",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"to\": \"{{Test-Group-Id}}\",\n  \"type\": \"text\",\n  \"recipient_type\": \"group\",\n  \"text\": {\n    \"body\": \"<Message Text>\"\n  }\n}\n"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/messages/",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"messages",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Send-Image-Message-By-ID",
 					"request": {
 						"method": "POST",
@@ -1863,456 +1831,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "05-Groups",
-			"item": [
-				{
-					"name": "Create-Group",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"<Group Subject>\"\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get-All-Groups",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/v1/groups/",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get-Group-Info",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update-Group-Info",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"subject\": \"<New Group Subject>\"\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get-Group-Invite",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/invite",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"invite"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete-Group-Invite",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/invite",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"invite"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove-Group-Participant",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"wa_ids\": [\"{{Recipient-WA-ID}}\"]\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/participants",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"participants"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Leave-Group",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/leave",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"leave"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Set-Group-Icon",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {}
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/icon",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"icon"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get-Group-Icon-Binary",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/icon",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"icon"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get-Group-Icon-URL",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/icon?format=link",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"icon"
-							],
-							"query": [
-								{
-									"key": "format",
-									"value": "link"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete-Group-Icon",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {}
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/icon",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"icon"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Promote-To-Group-Admin",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"wa_ids\": [\"<Recipient WA-ID, from Contacts API>\"]\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/admins",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"admins"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Demote-Group-Admin",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"wa_ids\": [\"<Recipient WA-ID, from Contacts API>\"]\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/groups/{{Test-Group-Id}}/admins",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"groups",
-								"{{Test-Group-Id}}",
-								"admins"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "06-Media",
+			"name": "05-Media",
 			"item": [
 				{
 					"name": "Upload-Media",
@@ -2414,7 +1933,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "07-Stickers",
+			"name": "06-Stickers",
 			"item": [
 				{
 					"name": "Get-First-Party-Stickerpacks",
@@ -2864,7 +2383,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "08-Health",
+			"name": "07-Health",
 			"item": [
 				{
 					"name": "Check-Health",
@@ -3038,7 +2557,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "09-Certificates",
+			"name": "08-Certificates",
 			"item": [
 				{
 					"name": "Upload-Certificate",
@@ -3192,7 +2711,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "10-Services",
+			"name": "09-Services",
 			"item": [
 				{
 					"name": "Delete-Messages-From-DB",
@@ -3231,7 +2750,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "11-Metrics-And-Stats",
+			"name": "10-Metrics-And-Stats",
 			"item": [
 				{
 					"name": "Metrics",
