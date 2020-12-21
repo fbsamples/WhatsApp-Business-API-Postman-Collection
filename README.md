@@ -20,3 +20,27 @@ See [docs](https://developers.facebook.com/docs/whatsapp/guides/postman) for det
 ## License
 
 Please refer to the LICENSE file.
+
+
+# API de WhatsApp Business  - Coleccion de Postman 
+
+Esta es una colección de Postman de [API de WhatsApp Business](https://developers.facebook.com/docs/whatsapp).  El entorno proporcionado contiene la lista de variables a las que hace referencia la colección de API.
+
+Consulte los documentos para conocer su uso.
+https://developers.facebook.com/docs/whatsapp/guides/postman
+
+## Requisitos
+
+El entorno y la colección de Postman de la API de WhatsApp Business requieren la instalación de [Postman](https://www.getpostman.com/).
+
+## Instalacion
+
+1) Descarga `collection.json` y `environment.json` en su máquina local.Si está trabajando con la API de administración empresarial, deberá descargar el conjunto separado de archivos de configuración dentro de la carpeta `business_management_api`.
+2) Abra Postman, haga clic en Importar y seleccione los dos archivos jsons.
+3) Una vez importada, se creará una nueva colección de API, junto con el entorno correspondiente.
+
+Ver los [documentos](https://developers.facebook.com/docs/whatsapp/guides/postman) para mas detalles.
+
+## Licencia
+
+Consulte el archivo LICENSE.
