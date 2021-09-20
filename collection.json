@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3d42bf16-c4fc-440f-a00a-075bc83836a8",
+		"_postman_id": "c92495f3-8c6b-4e25-8548-2bb9d1a9e66d",
 		"name": "WhatsApp Business API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -768,71 +768,9 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "Get-Business-Compliance-Info",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{AdminAuthToken}}"
-									}
-								],
-								"url": {
-									"raw": "{{URL}}/v1/settings/business/compliance_info",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"v1",
-										"settings",
-										"business",
-										"compliance_info"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Set-Business-Compliance-Info",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{AdminAuthToken}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"entity_name\": \"<Business Entity Name>\",\n\t\"entity_type\": \"<Business Entity Type: 'Limited liability partnership' | 'Sole proprietorship' | 'Partnership' | 'Public Company' | 'Private Company' | 'Other' >\",\n\t\"entity_type_custom\": \"<Use when entity_type is set to 'Other' or 'Partnership' >\",\n    \"is_registered\": \"true | false\",\n\t\"customer_care_details\": {\n        \"email\": \"<customer care email address>\",\n        \"landline_number\": \"<customer care landline number>\",\n        \"mobile_number\": \"<customer care mobile number>\"\n    },\n    \"grievance_officer_details\": {\n        \"name\": \"<grievance officer name>\",\n        \"email\": \"<grievance officer email address>\",\n        \"landline_number\": \"<grievance officer landline number>\",\n        \"mobile_number\": \"<grievance officer mobile number>\"\n    }\n}"
-								},
-								"url": {
-									"raw": "{{URL}}/v1/settings/business/compliance_info",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"v1",
-										"settings",
-										"business",
-										"compliance_info"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
+					}
+				]
+			},
 				{
 					"name": "Profile",
 					"item": [
@@ -1637,68 +1575,6 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"to\": \"{{Recipient-WA-ID}}\",\n    \"recipient_type\": \"individual\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"button\",\n        \"header\": {\n            \"type\": \"text\",\n            \"text\": \"<Header Text>\"\n        },\n        \"body\": {\n            \"text\": \"<Body Text>\"\n        },\n        \"footer\": {\n            \"text\": \"<Footer Text>\"\n        },\n        \"action\": {\n            \"buttons\": [\n                {\n                    \"type\": \"reply\",\n                    \"reply\": {\n                        \"id\": \"<Button 1 Text>\",\n                        \"title\": \"<Button 1>\"\n                    }\n                },\n                {\n                    \"type\": \"reply\",\n                    \"reply\": {\n                        \"id\": \"<Button 2 Text>\",\n                        \"title\": \"<Button 2>\"\n                    }\n                },\n                {\n                    \"type\": \"reply\",\n                    \"reply\": {\n                        \"id\": \"<Button 3 Text>\",\n                        \"title\": \"<Button 3>\"\n                    }\n                }\n            ]\n        }\n    }\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/messages",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"messages"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Send-Multi-Product-Message",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n    \"recipient_type\": \"individual\",\n    \"to\" : \"{{Recipient-WA-ID}}\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"product_list\",\n        \"header\":{\n            \"type\": \"text\",\n            \"text\": \"<Header text>\"\n        },\n        \"body\":{\n            \"text\": \"<Body Text>\"\n        },\n        \"footer\":{\n            \"text\": \"<Optional Footer Text>\"\n        },\n        \"action\": {\n            \"catalog_id\": \"<catalog_id to be set>\",\n            \"sections\": [\n                {\n                    \"title\": \"<Section 1 Title>\",\n                    \"product_items\": [\n                        {\"product_retailer_id\": \"<product_retailer_id_1 to be set>\"},\n                        {\"product_retailer_id\": \"<product_retailer_id_2 to be set>\"}\n                    ]\n                },\n                {\n                    \"title\": \"<Section 2 Title>\",\n                    \"product_items\": [\n                        {\"product_retailer_id\": \"<product_retailer_id_3 to be set>\"},\n                        {\"product_retailer_id\": \"<product_retailer_id_4 to be set>\"}\n                    ]\n                },\n                {\n                    \"title\": \"<Section 3 Title>\",\n                    \"product_items\": [\n                        {\"product_retailer_id\": \"<product_retailer_id_5 to be set>\"},\n                        {\"product_retailer_id\": \"<product_retailer_id_6 to be set>\"}\n                    ]\n                }\n                ]\n        }\n    }\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/v1/messages",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"v1",
-								"messages"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Send-Single-Product-Message",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AdminAuthToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n    \"recipient_type\": \"individual\",\n    \"to\" : \"{{Recipient-WA-ID}}\",\n    \"type\": \"interactive\",\n    \"interactive\": {\n        \"type\": \"product\",\n        \"action\": {\n            \"catalog_id\": \"<catalog_id to be set>\",\n            \"product_retailer_id\": \"<product_retailer_id to be set>\"\n        },\n        \"body\":{\n            \"text\": \"<Optional Body Text>\"\n        },\n        \"footer\":{\n            \"text\": \"<Optional Footer Text>\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{URL}}/v1/messages",
